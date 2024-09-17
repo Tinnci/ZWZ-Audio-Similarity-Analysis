@@ -1,6 +1,4 @@
-------
-
-### Overview
+## Overview
 
 The **ZWZ Audio Similarity Analysis** project is designed to compare audio files recorded by different devices and evaluate their similarity to a ground truth audio file. This is achieved using various audio features such as MFCC, spectral contrast, and wavelet transform, and calculating similarity scores through Dynamic Time Warping (DTW) and Euclidean distance methods.
 
