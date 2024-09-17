@@ -69,12 +69,13 @@ ZWZ_Audio_Similarity_Analysis/
 │   └── cmp_adele.py                  # Main script for audio comparison
 │
 ├── README.md                         # Project documentation
-└── results/                          # Directory for storing output and result files
+└── results                           #output and result files
+.....et cetra
 ```
 
 ------
 
-#### Running the Script
+#### E.g. on How to Running the Script
 
 Once the dataset is prepared, you can run the main script to compute similarity scores between the test audios and the ground truth:
 
