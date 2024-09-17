@@ -1,0 +1,2 @@
+2024-09-18 00:51:17,415 - ERROR - 加载音频文件 data/ZWZ_RDWMPS_1.wav 失败: [Errno 2] No such file or directory: 'data/ZWZ_RDWMPS_1.wav'
+2024-09-18 00:51:17,416 - ERROR - 音频文件 data/ZWZ_RDWMPS_1.wav 加载失败，程序终止。
