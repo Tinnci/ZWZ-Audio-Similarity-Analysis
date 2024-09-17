@@ -8,6 +8,10 @@ This repository contains Python scripts for loading audio files, performing pre-
 
 The dataset used for this project is called **ZWZ_**, which consists of multiple audio files recorded by different devices, including ground truth recordings for comparison.
 
+Ground truth is the highest quality audio stream snippets retrieved from AM. Using a Samsung android device as Bluetooth A2dp audio source, a pipewire ubuntu device as A2dp sink, then Bluetooth PCM stream being captured use pipewire build-in capture tools. The ALAC source uses 16/24 bit 44.1Khz sampling rate, so the audio stream will go through a SRC progress using android's audio stack. The audio is encoded using the AAC codec from android and decoded using the codec form pipewire, which might result in difference from the target progress (the codec on iOS might not be the same).
+
+Audio snippets are being retrieved from audio track: (Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 78 kb/s (default)), processed using RX 10 editor in 32bit float and 48Khz, I can only assure that no loss is introduced during limited processing, that is, cut and connect these snippets back.
+
 - **Dataset Structure is similar to this:**
   - `ZWZ_Adele_1.wav`: Test audio 1.
   - `ZWZ_Adele_2.wav`: Test audio 2.
@@ -54,7 +58,6 @@ ZWZ_Audio_Similarity_Analysis/
 ├── scripts/                          # Python scripts for feature extraction and similarity computation
 │   └── cmp_adele.py                  # Main script for audio comparison
 │
-├── requirements.txt                  # List of dependencies
 ├── README.md                         # Project documentation
 └── results/                          # Directory for storing output and result files
 ```
