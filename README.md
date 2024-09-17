@@ -119,3 +119,75 @@ Feel free to fork this repository, open issues, or submit pull requests to impro
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+
+
+------
+
+### Extra: Determining Authenticity of a Sample
+
+In some cases, it's important to evaluate whether an audio sample has been tampered with or altered in a way that could indicate it is not authentic. To determine if a sample might be falsified, you can apply a combination of techniques to compare the suspect audio with the ground truth.
+
+#### 1. Unusual Similarity in SPL or Feature Matching
+
+If a sample matches the **Sound Pressure Level (SPL)** or specific audio features (e.g., MFCC, spectral contrast) of the ground truth *too perfectly* despite being recorded with a different or lower-quality device, this could be a sign of tampering:
+
+- **SPL Matching**: Perfect SPL alignment between a suspect sample and the ground truth, especially when using a lower-quality or less calibrated device, may indicate post-processing or manipulation to artificially match the reference.
+- **Feature Similarity**: Extremely high similarity scores in multiple audio features across different recording conditions may indicate that the suspect sample was derived from the ground truth using techniques such as resampling, post-processing, or other forms of signal manipulation.
+
+*How to Analyze*:  
+Compare the SPL values, MFCC features, and spectral contrast of the suspect sample with the ground truth. If the similarity is unusually high despite known differences in recording devices or environments, this could suggest the sample has been modified to mimic the ground truth.
+
+#### 2. Frequency-Domain Anomalies
+
+Analyzing the frequency spectrum of the suspect sample can reveal signs of manipulation, such as:
+
+- **Frequency Gaps or Enhancements**: Artificially boosting or reducing certain frequency ranges to mask differences between the ground truth and the suspect sample can introduce anomalies.
+- **Harmonic Distortion**: Signs of non-linear editing or excessive processing may be indicated by the presence of unexpected harmonics or other spectral distortions not present in the original ground truth.
+
+*How to Analyze*:  
+Use frequency-domain tools such as STFT or spectrograms to compare the suspect sample with the ground truth. Look for unexpected patterns, such as missing high-frequency details, enhanced low-end, or unusual harmonic content that could indicate post-processing.
+
+#### 3. Time-Domain Irregularities
+
+If a sample has been tampered with, there may be irregularities in the waveform, such as:
+
+- **Waveform Smoothing**: Over-processed audio may exhibit overly smooth waveforms, where transients and natural fluctuations are artificially dampened.
+- **Clipping or Artifacts**: If a suspect sample has been altered through aggressive compression or normalization, it may introduce clipping or other unnatural artifacts that deviate from the original signal’s natural dynamics.
+
+*How to Analyze*:  
+Compare the time-domain waveform of the suspect sample to the ground truth. Look for unusual smoothness, clipped peaks, or other artifacts that suggest post-processing or signal manipulation.
+
+#### 4. Dynamic Range Compression and Transient Loss
+
+Suspicious samples may exhibit unnatural dynamic compression that differs from the expected behavior of the original recording:
+
+- **Dynamic Range Reduction**: A falsified sample may have an unusually narrow dynamic range, with minimal differences between loud and soft sections.
+- **Loss of Transient Detail**: If transients (sharp, quick sounds) like drum hits are less clear or sharp in the suspect sample, this could indicate it has been reprocessed.
+
+*How to Analyze*:  
+Compare the dynamic range and transient response of the suspect sample with the ground truth. If transients are unnaturally softened or the dynamic range is significantly reduced, it may suggest that the sample has been manipulated.
+
+#### 5. Metadata and Contextual Clues
+
+Examining the metadata of the audio file or understanding the context of how the sample was recorded can provide additional evidence:
+
+- **Metadata Inconsistencies**: Check the file’s metadata for signs of editing, such as unusual timestamps, encoding details, or processing software tags that differ from what would be expected for a raw recording.
+- **Contextual Analysis**: Consider the environment in which the sample was recorded. If the recording conditions should have resulted in significant differences from the ground truth, but the suspect sample closely matches the reference audio, this may indicate tampering.
+
+*How to Analyze*:  
+Check the metadata of the suspect audio file for any unusual discrepancies or unexpected information. Cross-check with known details about how the recording should have been made.
+
+#### 6. Cross-Referencing Multiple Samples
+
+If there are multiple suspect samples available, you can cross-reference them to detect inconsistencies:
+
+- **Unexpected Similarities Between Suspect Samples**: If multiple suspect samples are suspiciously similar to each other or to the ground truth (but should not be), this can be an indication that they were generated from the same altered source.
+- **Pattern Analysis**: Look for consistent processing artifacts, such as identical noise profiles or compression patterns, across multiple samples that suggest the same post-processing workflow was applied.
+
+*How to Analyze*:  
+Compare multiple suspect samples to each other and the ground truth. Look for patterns of similarity or shared artifacts that suggest they were processed in the same way, potentially indicating manipulation.
+
+#### 7. Conclusion
+
+By analyzing a suspect sample's similarity to the ground truth across time-domain, frequency-domain, and dynamic range features, as well as reviewing metadata and contextual information, you can detect signs of tampering. While high similarity alone doesn't prove falsification, combining these techniques can reveal whether a sample has been unnaturally manipulated to mimic the original audio.
+
