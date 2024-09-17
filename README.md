@@ -31,11 +31,7 @@ The similarity between test audios and the ground truth is computed using the fo
 
 #### Prerequisites
 
-Before running the project, ensure you have the necessary dependencies installed. You can install them using `pip`:
-
-```bash
-pip install -r requirements.txt
-```
+Before running the project, ensure you have the necessary dependencies installed. You can install them using `pip` or `conda`. (`conda-forge`)
 
 List of required Python packages:
 - `librosa`
