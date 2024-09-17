@@ -1,8 +1,12 @@
+------
+
 ### Overview
 
 The **ZWZ Audio Similarity Analysis** project is designed to compare audio files recorded by different devices and evaluate their similarity to a ground truth audio file. This is achieved using various audio features such as MFCC, spectral contrast, and wavelet transform, and calculating similarity scores through Dynamic Time Warping (DTW) and Euclidean distance methods.
 
 This repository contains Python scripts for loading audio files, performing pre-processing (such as normalization and alignment), extracting features, and computing similarity scores between test audio recordings and the ground truth.
+
+------
 
 ### Data
 
@@ -18,6 +22,8 @@ Audio snippets are being retrieved from audio track: (Stream #0:1[0x2](und): Aud
   - `ZWZ_Adele_3.wav`: Test audio 3.
   - `ZWZ_Adele_groundtruth.wav`: Ground truth audio for comparison.
 
+------
+
 ### Features Used
 
 - **MFCC (Mel Frequency Cepstral Coefficients):** Extracts spectral features that mimic human auditory perception.
@@ -31,6 +37,8 @@ The similarity between test audios and the ground truth is computed using the fo
 - **Dynamic Time Warping (DTW):** Aligns audio sequences of different lengths by minimizing the time distortion required to match one sequence with another.
 - **Euclidean Distance:** Measures straight-line distance between two vectors in feature space.
 
+------
+
 ### How to Use
 
 #### Prerequisites
@@ -43,6 +51,8 @@ List of required Python packages:
 - `scipy`
 - `fastdtw`
 - `pywavelets`
+
+------
 
 #### Repository Structure
 
@@ -61,6 +71,8 @@ ZWZ_Audio_Similarity_Analysis/
 ├── README.md                         # Project documentation
 └── results/                          # Directory for storing output and result files
 ```
+
+------
 
 #### Running the Script
 
@@ -81,20 +93,28 @@ audio2 vs Groundtruth: 1028.9112
 audio3 vs Groundtruth: 1104.5651
 ```
 
+------
+
 #### Analyzing Results
 
 The similarity scores give insight into how close the recordings from different devices are to the ground truth. A lower score indicates a higher similarity to the reference audio.
 
 The repository also provides a visualization of the similarity scores across different scenarios to help understand the comparison more clearly.
 
+------
+
 ### Customization
 
 - Modify the `WEIGHTS` dictionary in the script to adjust the contribution of each feature (MFCC, spectral contrast, wavelet) in the final similarity score.
 - Add or remove feature extraction methods as per your needs.
 
+------
+
 ### Contribution
 
 Feel free to fork this repository, open issues, or submit pull requests to improve the project. Contributions are welcome!
+
+------
 
 ### License
 
