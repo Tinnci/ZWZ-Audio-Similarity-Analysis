@@ -1,0 +1,4 @@
+2024-09-18 08:48:35,599 - INFO - 成功加载 data/ZWZ_RDWPS_1.wav，采样率: 48000 Hz
+2024-09-18 08:48:35,600 - INFO - 成功加载 data/ZWZ_RDWPS_2.wav，采样率: 48000 Hz
+2024-09-18 08:48:35,601 - INFO - 成功加载 data/ZWZ_RDWPS_3.wav，采样率: 48000 Hz
+2024-09-18 08:48:35,602 - INFO - 成功加载 data/ZWZ_RDWPS_groundtruth.wav，采样率: 48000 Hz
